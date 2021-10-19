@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
+
+.op__container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  position: relative;
+  z-index: 10;
+  transform-style: preserve-3d;
+  transform: perspective(1200px);
+  overflow: hidden;
+  background: black;
+
+  .star_death {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    background: url(../img/dest/star_death.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    z-index: 11;
+    filter: brightness(.7);
+  }
+
+  .op__bg {
+    position: absolute;
+    top: -55%;
+    left: -55%;
+    background: url(../img/dest/starry-sky.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 210%;
+    height: 210%;
+    transform: perspective(1200px) rotateZ(0deg) rotateX(-5deg) rotateY(5deg);
+    animation: linear star_rotate 100s infinite reverse, op__bgA 15s linear infinite;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    z-index: 12;
+    background: url(../img/dest/star_layer1.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 300%;
+    height: 300%;
+    animation: linear star_rotate 600s infinite;
+    //opacity: .5;
+    filter: blur(3px);
+    transform: perspective(1200px) rotateZ(0deg) rotateX(-5deg) rotateY(5deg);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    z-index: 13;
+    background: url(../img/dest/star_layer2.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    background-origin: border-box;
+    width: 200%;
+    height: 200%;
+    transform: perspective(1200px) rotateZ(0deg) rotateX(-5deg) rotateY(5deg);
+    animation: linear star_rotate 700s infinite reverse;
+    opacity: .9;
+    filter: blur(1px);
+  }
+
+}
+
+@keyframes star_rotate {
+  0% {
+    transform: perspective(1200px) rotateZ(0deg) rotateX(-5deg) rotateY(15deg);
+  }
+  100% {
+    transform: perspective(1200px) rotateZ(360deg) rotateX(5deg) rotateY(-15deg);
+  }
+}
+
+.spaceship {
+  width: 650px;
+  height: 450px;
+  margin: -400px auto 0;
+  display: block;
+  background: url("../img/dest/sokol.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  offset-path: path("M273.037 780C273.037 780 -87.6016 610.218 21.5919 599.463C130.785 588.707 351.677 644.021 401.265 599.463C450.853 554.904 94.2206 551.831 112.253 521.102C130.285 490.372 394.753 513.419 337.652 490.372C280.551 467.324 133.791 483.458 171.858 463.483C209.926 443.509 247.993 450.423 257.009 426.607C266.025 402.792 257.009 1 257.009 1");
+  animation: fly 15s linear infinite;
+  offset-rotate: 0deg;
+  position: relative;
+  z-index: 100;
+  filter: brightness(1.05);
+}
+
+@keyframes fly {
+  0% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 0%;
+    transform: perspective(1200px) translateZ(1000px) rotateZ(-15deg);
+  }
+
+  10% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 10%;
+    transform: perspective(1200px) translateZ(-1000px) rotateZ(-5deg);
+  }
+
+  20% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 20%;
+    transform: perspective(1200px) translateZ(-2000px) rotateZ(0deg);
+  }
+
+  30% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 30%;
+    transform: perspective(1200px) translateZ(-3000px) rotateZ(-10deg);
+  }
+
+  40% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 40%;
+    transform: perspective(1200px) translateZ(-4000px) rotateZ(-15deg);
+  }
+
+  50% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 50%;
+    transform: perspective(1200px) translateZ(-5000px) rotateZ(15deg);
+  }
+
+  60% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 60%;
+    transform: perspective(1200px) translateZ(-7000px) rotateZ(15deg);
+  }
+
+  70% {
+    width: 650px;
+    height: 450px;
+    offset-distance: 70%;
+    transform: perspective(1200px) translateZ(-10000px) rotateZ(-15deg);
+  }
+
+  80% {
+    width: 550px;
+    height: 350px;
+    offset-distance: 80%;
+    transform: perspective(1200px) translateZ(-12000px) rotateZ(15deg);
+    border-radius: 0%;
+  }
+
+
+  89% {
+    width: 550px;
+    height: 250px;
+    offset-distance: 89%;
+    box-shadow: none;
+    border-radius: 1%;
+    transform: perspective(1200px) translateZ(-14000px) rotateZ(15deg);
+  }
+
+  90% {
+    width: 550px;
+    height: 250px;
+    offset-distance: 90%;
+    box-shadow: none;
+    border-radius: 20%;
+    transform: perspective(1200px) translateZ(-14000px) rotateZ(15deg);
+  }
+
+  99% {
+    height: 850px;
+    width: 10px;
+    offset-distance: 99%;
+    box-shadow: 0 0 100px #ffffff, inset 0 0 100px #ffffff, 0 0 200px #ffffff, inset 0 0 200px #002b9e, 0 0 300px #ffffff, inset 0 0 300px #ffffff, 0 0 400px #ffffff, inset 0 0 400px #ffffff;
+    border-radius: 50%;
+    transform: perspective(1200px) translateZ(-14500px) rotateZ(0deg);
+  }
+
+  100% {
+    width: 850px;
+    height: 1px;
+    offset-distance: 100%;
+    box-shadow: 0 0 100px #ffffff, inset 0 0 100px #ffffff, 0 0 200px #ffffff, inset 0 0 200px #ffffff;
+    border-radius: 50%;
+    transform: perspective(1200px) translateZ(-15000px) rotateZ(-15deg);
+  }
+}
+
+@keyframes fly_width {
+  0% {
+    width: 650px;
+    height: 450px;
+  }
+  100% {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@keyframes op__bgA {
+  0% {
+    opacity: 1;
+    transform: perspective(1200px) translateZ(-1200px);
+  }
+
+  90% {
+    opacity: 1;
+    transform: perspective(1200px) translateZ(-1200px);
+  }
+  100% {
+    opacity: 0;
+    transform: perspective(1200px) translateZ(-700px);
+  }
+}
+
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.layer1 {
+  background: url("../img/dest/l1.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-1000px) translateX(0px) rotateZ(0deg);
+  z-index: 29;
+  animation: layer1A 15s linear infinite;
+}
+
+@keyframes layer1A {
+  0% {
+    transform: perspective(1200px) translateZ(-1000px) translateX(0px) rotateZ(0deg);
+  }
+  100% {
+    transform: perspective(1200px) translateZ(2000px) translateX(-2500px) rotateZ(95deg);
+  }
+}
+
+.layer2 {
+  background: url("../img/dest/l2.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-800px) rotateZ(0deg) translateY(0px) translateX(0px);
+  z-index: 29;
+  animation: layer2A 15s linear infinite;
+}
+
+@keyframes layer2A {
+  0% {
+    transform: perspective(1200px) translateZ(-800px) rotateZ(0deg) translateY(0px) translateX(0px);
+  }
+  100% {
+    transform: perspective(1200px) translateZ(3000px) rotateZ(15deg) translateY(-3500px) translateX(1800px);
+  }
+}
+
+
+.layer3 {
+  background: url("../img/dest/l3.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-2500px) rotateZ(0deg) translateY(0px) translateX(0px);
+  z-index: 29;
+  left: -350px;
+  top: -350px;
+  animation: layer3A 15s linear infinite;
+}
+
+@keyframes layer3A {
+  0% {
+    transform: perspective(1200px) translateZ(-2500px) rotateZ(0deg) translateY(0px) translateX(0px);
+  }
+  100% {
+    transform: perspective(1200px) translateZ(3000px) rotateZ(-36deg) translateY(4000px) translateX(-4000px);
+  }
+}
+
+.layer4 {
+  background: url("../img/dest/l4.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-858px) rotateZ(0deg);
+  max-width: 450px;
+  z-index: 128;
+  left: auto;
+  right: 10px;
+  bottom: -220px;
+  animation: layer4A 15s linear infinite;
+}
+
+@keyframes layer4A {
+  0% {
+    left: auto;
+    right: 10px;
+    transform: perspective(1200px) translateZ(-1858px) rotateZ(0deg);
+  }
+  85.2% {
+    left: auto;
+    right: -1410px;
+    transform: perspective(1200px) translateZ(1000px) rotateZ(90deg);
+  }
+  100% {
+    left: auto;
+    right: -410px;
+    transform: perspective(1200px) translateZ(2000px) rotateZ(0deg);
+  }
+}
+
+.layer5 {
+  background: url("../img/dest/l5.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-716px) translateY(0px) translateX(0px);
+  z-index: 27;
+  right: 0px;
+  bottom: -200px;
+  max-width: 350px;
+  animation: layer5A 15s linear infinite;
+}
+
+@keyframes layer5A {
+  0% {
+    transform: perspective(1200px) translateZ(-716px) translateY(0px) translateX(0px);
+    right: 0px;
+    bottom: -200px;
+  }
+  71% {
+    transform: perspective(1200px) translateZ(1000px) translateY(1000px) translateX(850px);
+    right: 700px;
+    bottom: 200px;
+  }
+  100% {
+    transform: perspective(1200px) translateZ(2000px) translateY(0px) translateX(0px);
+    right: -360px;
+    bottom: -200px;
+  }
+}
+
+.layer6 {
+  background: url("../img/dest/l6.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-574px) translateY(0px) translateX(0px);
+  z-index: 21;
+  left: 100px;
+  bottom: 100px;
+  max-width: 500px;
+  animation: layer6A 15s linear infinite;
+  animation-delay: 5s;
+}
+
+@keyframes layer6A {
+  0% {
+    transform: perspective(1200px) translateZ(-574px) translateY(0px) translateX(0px);
+    left: -320px;
+    bottom: -190px;
+  }
+  56.8% {
+    transform: perspective(1200px) translateZ(1000px) translateY(-500px) translateX(2850px);
+    left: 300px;
+    bottom: 300px;
+  }
+  100% {
+    transform: perspective(1200px) translateZ(2000px) translateY(0px) translateX(0px);
+    left: -320px;
+    bottom: -190px;
+  }
+}
+
+.layer7 {
+  background: url("../img/dest/l7.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-290px) translateY(-500px) translateX(0px);
+  z-index: 25;
+  left: 40%;
+  top: -1200px;
+  max-width: 650px;
+  animation: layer7A 45s linear infinite;
+  animation-delay: 15s;
+}
+
+@keyframes layer7A {
+  0% {
+    transform: perspective(1200px) translateZ(-290px) translateY(-500px) translateX(0px);
+    left: 40%;
+    top: -1200px;
+  }
+  28.4% {
+    transform: perspective(1200px) translateZ(1000px) translateY(3500px) translateX(0px);
+    left: 300px;
+    bottom: 300px;
+  }
+  100% {
+    transform: perspective(1200px) translateZ(1000px) translateY(-500px) translateX(0px);
+    left: 40%;
+    top: -1200px;
+  }
+}
+
+
+.layer8 {
+  background: url("../img/dest/l8.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-148px) rotateZ(0deg);
+  z-index: 24;
+  right: -110px;
+  bottom: -80px;
+  max-width: 250px;
+  animation: layer8A 30s linear infinite;
+  animation-delay: 30s;
+}
+
+@keyframes layer8A {
+  0% {
+    transform: perspective(1200px) translateZ(-148px) rotateZ(0deg);
+    right: -110px;
+    bottom: -80px;
+  }
+  14.2% {
+    right: 200px;
+    bottom: 200px;
+    transform: perspective(1200px) translateZ(500px) rotateZ(90deg);
+  }
+  100% {
+    transform: perspective(1200px) translateZ(1000px) rotateZ(0deg);
+    right: -110px;
+    bottom: -80px;
+  }
+}
+
+.layer9 {
+  background: url("../img/dest/l9.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-300px) rotateZ(0deg);
+  z-index: 23;
+  right: -410px;
+  bottom: -220px;
+  animation: layer9A 15s linear infinite;
+  animation-delay: 45s;
+}
+
+@keyframes layer9A {
+  0% {
+    right: -410px;
+    bottom: -220px;
+    transform: perspective(1200px) translateZ(-300px) rotatez(180deg);
+  }
+  85.2% {
+    right: 250px;
+    bottom: -50px;
+    transform: perspective(1200px) translateZ(1000px) rotatez(0deg);
+  }
+  100% {
+    right: -410px;
+    bottom: -220px;
+    transform: perspective(1200px) translateZ(2000px) rotateY(180deg);
+  }
+}
+
+.layer10 {
+  background: url("../img/dest/l10.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-1816px) rotateY(-180deg);
+  z-index: 22;
+  left: -360px;
+  bottom: -200px;
+  animation: layer10A 15s linear infinite;
+  animation-delay: 30s;
+}
+
+@keyframes layer10A {
+  0% {
+    transform: perspective(1200px) translateZ(-1816px) translateX(0px);
+    left: -360px;
+    bottom: -200px;
+  }
+  71% {
+    transform: perspective(1200px) translateZ(1000px) translateX(1500px);
+    left: 300px;
+    bottom: 200px;
+  }
+  100% {
+    transform: perspective(1200px) translateZ(2000px) translateX(0px);
+    left: -360px;
+    bottom: -200px;
+  }
+}
+
+.layer11 {
+  background: url("../img/dest/l11.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-2000px) rotateZ(0deg) translateX(0px);
+  z-index: 121;
+  right: 100px;
+  bottom: 100px;
+  animation: layer11A 15s linear infinite;
+  opacity: 0;
+  animation-delay: 15s;
+}
+
+@keyframes layer11A {
+  0% {
+    opacity: 1;
+    transform: perspective(1200px) translateZ(-2000px) rotateZ(0deg) translateX(0px);
+    right: -320px;
+    bottom: -190px;
+  }
+  56.8% {
+    opacity: 1;
+    transform: perspective(1200px) translateZ(1000px) rotateZ(-180deg) translateX(1500px);
+    right: 300px;
+    bottom: 300px;
+  }
+  100% {
+    transform: perspective(1200px) translateZ(2000px) rotateZ(0deg) translateX(0px);
+    right: -320px;
+    bottom: -190px;
+  }
+}
+
+.layer12 {
+  background: url("../img/dest/l12.webp") center center no-repeat no-repeat;
+  background-size: contain;
+  transform: perspective(1200px) translateZ(-3000px) rotateY(-180deg) translateX(0px);
+  z-index: 120;
+  left: -190px;
+  bottom: -120px;
+  animation: layer12A 15s linear infinite;
+  opacity: 0;
+  animation-delay: 15s;
+}
+
+@keyframes layer12A {
+  0% {
+    opacity: 1;
+    transform: perspective(1200px) translateZ(-3000px) rotateZ(-180deg) translateX(0px);
+    left: -190px;
+    bottom: -120px;
+  }
+  28.4% {
+    opacity: 1;
+    transform: perspective(1200px) translateZ(1000px) rotateZ(180deg) translateX(-1800px);
+    left: 300px;
+    bottom: 300px;
+  }
+  100% {
+    transform: perspective(1200px) translateZ(1000px) rotateZ(-180deg) translateX(0px);
+    left: -190px;
+    bottom: -120px;
+  }
+}
