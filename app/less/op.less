@@ -37,9 +37,13 @@
     width: 230px;
     height: 230px;
     border-radius: 50%;
-    animation: linear rotate_star_light 30s infinite;
+    animation: linear rotate_star_light 50s infinite;
     z-index: 14;
     filter: brightness(.7);
+    @media screen and (max-width: 1000px) {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   .star_light2 {
@@ -55,6 +59,10 @@
     z-index: 14;
     filter: brightness(.7);
     animation: linear rotate_star_light 40s infinite reverse;
+    @media screen and (max-width: 1000px) {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .star_light3 {
@@ -70,6 +78,63 @@
     animation: linear rotate_star_light 10s infinite;
     z-index: 14;
     filter: brightness(1.2);
+    @media screen and (max-width: 1000px) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .star_planet1 {
+    position: absolute;
+    bottom: -6%;
+    left: 0;
+    background: url(../img/dest/planet1.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    transform: rotate(48deg);
+    z-index: 14;
+    filter: brightness(.5);
+    @media screen and (max-width: 1000px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  .star_planet2 {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    background: url(../img/dest/planet2.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transform: rotate(-194deg);
+    z-index: 16;
+    filter: brightness(.5);
+    @media screen and (max-width: 1000px) {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .star_planet3 {
+    position: absolute;
+    bottom: -1%;
+    right: 17%;
+    background: url(../img/dest/planet3.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    z-index: 17;
+    filter: brightness(.8);
+    @media screen and (max-width: 1000px) {
+      width: 75px;
+      height: 75px;
+    }
   }
 
   .op__bg {
