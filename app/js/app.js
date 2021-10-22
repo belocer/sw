@@ -24,5 +24,5 @@ window.addEventListener('load', () => {
             i = true;
         }
 
-    }, 14500)
+    }, 14750)
 })

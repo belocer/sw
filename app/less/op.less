@@ -15,14 +15,61 @@
 
   .star_death {
     position: absolute;
-    top: 25%;
+    top: 35%;
     left: 25%;
     background: url(../img/dest/star_death.webp) center center no-repeat no-repeat;
     background-size: cover;
-    width: 50px;
-    height: 50px;
-    z-index: 11;
+    width: 75px;
+    height: 75px;
+    z-index: 14;
     filter: brightness(.7);
+  }
+
+  .star_light1 {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    //background: url(../img/dest/star2.webp) center center no-repeat no-repeat;
+    background: url(../img/dest/star4.webp) center center no-repeat no-repeat;
+    //background: url(../img/dest/star5.webp) center center no-repeat no-repeat;
+    //background: url(../img/dest/star6.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    animation: linear rotate_star_light 30s infinite;
+    z-index: 14;
+    filter: brightness(.7);
+  }
+
+  .star_light2 {
+    position: absolute;
+    bottom: 15%;
+    right: 5%;
+    background: url(../img/dest/star6.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 157, 0, 0.5);
+    z-index: 14;
+    filter: brightness(.7);
+    animation: linear rotate_star_light 40s infinite reverse;
+  }
+
+  .star_light3 {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 25px);
+    background: url(../img/dest/star2.webp) center center no-repeat no-repeat;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    box-shadow: 0 0 40px -20px rgba(255, 170, 0, 0.87), 0 0 80px 20px rgba(255, 173, 0, 0.91), 0 0 120px rgba(255, 170, 0, 0.94), 0 0 240px rgb(255, 162, 0), inset 0 0 40px rgba(255, 170, 0, 0.87), inset 0 0 20px rgba(92, 1, 0, .5);
+    animation: linear rotate_star_light 10s infinite;
+    z-index: 14;
+    filter: brightness(1.2);
   }
 
   .op__bg {
@@ -72,6 +119,12 @@
     filter: blur(1px);
   }
 
+}
+
+@keyframes rotate_star_light {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes star_rotate {
